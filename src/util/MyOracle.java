@@ -24,7 +24,6 @@ public class MyOracle {
     private String password;
 
     public MyOracle() {
-
     }
 
     public MyOracle(String ipAddress, String port, String sid, String userName, String password) {
@@ -40,9 +39,10 @@ public class MyOracle {
         try {
             //step1 load the driver class
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String connString = "jdbc:oracle:thin:@" + ipAddress + ":" + port + ":" + sid + ", " + userName + ", " + password + "";
+            String connString = "jdbc:oracle:thin:@" + ipAddress + ":" + port + ":" + sid;
+            System.out.println(connString);
             //step2 create  the connection object
-            con = DriverManager.getConnection(connString);
+            con = DriverManager.getConnection(connString, userName, password);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MyOracle.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -51,44 +51,73 @@ public class MyOracle {
         return con;
     }
 
+    /**
+     * @return the ipAddress
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
+    /**
+     * @param ipAddress the ipAddress to set
+     */
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
 
+    /**
+     * @return the port
+     */
     public String getPort() {
         return port;
     }
 
+    /**
+     * @param port the port to set
+     */
     public void setPort(String port) {
         this.port = port;
     }
 
+    /**
+     * @return the sid
+     */
     public String getSid() {
         return sid;
     }
 
+    /**
+     * @param sid the sid to set
+     */
     public void setSid(String sid) {
         this.sid = sid;
     }
 
+    /**
+     * @return the userName
+     */
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * @param userName the userName to set
+     */
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
+    /**
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * @param password the password to set
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
