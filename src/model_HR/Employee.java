@@ -10,11 +10,19 @@ package model_HR;
  * @author admin
  */
 public class Employee {
+
     // tantangan klau ada employee ID, tipe datanya apa? tipe datanya integer
     // private int employee_id;
     private String first_name;
     private String last_name;
-    
+
+    public Employee() {
+    }
+
+    public Employee(String first_name, String last_name) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+    }
 
     /**
      * @return the first_name
@@ -43,8 +51,8 @@ public class Employee {
     public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
-    
-    public String toString(){
-        return first_name+" "+last_name;
+
+    public String toString() {
+        return first_name + " " + last_name;
     }
 }
