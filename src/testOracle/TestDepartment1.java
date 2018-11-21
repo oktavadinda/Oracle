@@ -12,16 +12,18 @@ import model_HR.Department;
  * @author admin
  */
 public class TestDepartment1 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        Department dept = new Department(10, "Administration");
+        Department dept = new Department(10,"Administration");
         dept.readEmployees();
         for (int i = 0; i < dept.getListEmployees().size(); i++) {
             System.out.println(dept.getListEmployees().get(i).toString());
         }
+        
+        Department dept1 = new Department(20,"Marketing");
+        dept1.readEmployees();
+        for (int i = 0; i < dept1.getListEmployees().size(); i++) {
+            System.out.println(dept1.getListEmployees().get(i).toString());
+        }
     }
-
+  
 }

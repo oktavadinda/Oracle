@@ -16,7 +16,6 @@ import java.util.logging.Logger;
  * @author admin
  */
 public class MyOracle {
-
     private String ipAddress;
     private String port;
     private String sid;
@@ -34,15 +33,15 @@ public class MyOracle {
         this.password = password;
     }
 
-    public Connection getConnection() {
+    public Connection getConnection(){
         Connection con = null;
         try {
             //step1 load the driver class
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            String connString = "jdbc:oracle:thin:@" + ipAddress + ":" + port + ":" + sid;
+            String connString = "jdbc:oracle:thin:@"+ipAddress+":"+port+":"+sid;
             System.out.println(connString);
             //step2 create  the connection object
-            con = DriverManager.getConnection(connString, userName, password);
+            con = DriverManager.getConnection(connString,userName,password);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MyOracle.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -50,7 +49,7 @@ public class MyOracle {
         }
         return con;
     }
-
+    
     /**
      * @return the ipAddress
      */
@@ -120,4 +119,6 @@ public class MyOracle {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    
 }

@@ -27,8 +27,7 @@ public class Department {
     }
 
     /**
-     * Fungsi untuk membaca daftar/table employee lalu dipindahkan ke list
-     * daftar employees;
+     * Fungsi untuk membaca daftar/table employee lalu dipindahkan ke list daftar employees;
      */
     public void readEmployees() {
 
@@ -76,4 +75,5 @@ public class Department {
         this.listEmployees = listEmployees;
     }
 
+    
 }
