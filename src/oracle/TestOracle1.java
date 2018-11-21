@@ -8,7 +8,10 @@ package oracle;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,34 +19,24 @@ import java.sql.Statement;
  */
 public class TestOracle1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
         try {
-            //step1 load the driver class  
+            //step1 load the driver class
             Class.forName("oracle.jdbc.driver.OracleDriver");
-
-            //step2 create  the connection object  
+            //step2 create  the connection object
             Connection con = DriverManager.getConnection(
                     "jdbc:oracle:thin:@172.23.9.185:1521:orcl", "MHS175314107", "MHS175314107");
-
-            //step3 create the statement object  
+            //step3 create the statement object
             Statement stmt = con.createStatement();
-
-            //step4 execute query  
-            ResultSet rs = stmt.executeQuery("select E.first_name, E.last_name from MHS175314107.employees E");
+            //step4 execute query
+            ResultSet rs = stmt.executeQuery("select E.first_name, E.last_name from MHS175314107.employees E" );
             while (rs.next()) {
-                System.out.println(rs.getString(1) + "  " + rs.getString(2));
+                System.out.println( rs.getString(1) + "  " + rs.getString(2));
             }
-
-            //step5 close the connection object  
+            //step5 close the connection object
             con.close();
-
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(TestOracle1.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 }
