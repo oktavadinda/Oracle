@@ -22,13 +22,13 @@ public class TestOracle2 {
 
     public static void main(String[] args) {
         try {
-            MyOracle ora = new MyOracle("172.23.9.185", "1521", "orcl", "puspa", "puspa");
+            MyOracle ora = new MyOracle("172.23.9.185", "1521", "orcl", "MHS175314107", "MHS175314107");
             //step2 create  the connection object
             Connection con = ora.getConnection();
             //step3 create the statement object
             Statement stmt = con.createStatement();
             //step4 execute query
-            ResultSet rs = stmt.executeQuery("select E.first_name, E.last_name from puspa.employees E" );
+            ResultSet rs = stmt.executeQuery("select E.first_name, E.last_name from MHS175314107.employees E" );
             while (rs.next()) {
                 System.out.println( rs.getString(1) + "  " + rs.getString(2));
             }
