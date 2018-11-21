@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author admin
  */
 public class World {
-    private ArrayList<Regions> listRegions =  new ArrayList<Regions>();
+    private ArrayList<Region> listRegions =  new ArrayList<Region>();
     
     public World(){
         
@@ -21,11 +21,11 @@ public class World {
         
     }
 
-    public ArrayList<Regions> getListRegions() {
+    public ArrayList<Region> getListRegions() {
         return listRegions;
     }
 
-    public void setListRegions(ArrayList<Regions> listRegions) {
+    public void setListRegions(ArrayList<Region> listRegions) {
         this.listRegions = listRegions;
     }
     
