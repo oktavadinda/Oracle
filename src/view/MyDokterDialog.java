@@ -27,7 +27,7 @@ public class MyDokterDialog extends JDialog {
     private JTable table;
     private JButton tambahButton;
     private JButton simpanButton;
-    
+
     public MyDokterDialog(Frame owner, boolean modal) {
         super(owner, modal);
         init();
@@ -49,7 +49,7 @@ public class MyDokterDialog extends JDialog {
         JScrollPane scrollPane = new JScrollPane(table);
 
         //Add the scroll pane to this panel.
-        add(scrollPane,BorderLayout.CENTER);
+        add(scrollPane, BorderLayout.CENTER);
         // set tombol tambah dan simpan
         JPanel tombolPanel = new JPanel(new FlowLayout());
         // tombol untuk tambah dokter ke arrayList 
@@ -64,23 +64,31 @@ public class MyDokterDialog extends JDialog {
         });
         // tombol untuk simpan data arrayList Dokter ke basis data
         simpanButton = new JButton("Simpan Ke Database");
+        simpanButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rs.simpanDataDokter();
+            }
+        });
         tombolPanel.add(simpanButton);
-        add(tombolPanel,BorderLayout.NORTH);
+        add(tombolPanel, BorderLayout.NORTH);
         // set visible
         setVisible(true);
     }
+
     /**
      * Fungsi untuk memanggil dialog tambah Dokter
      */
-    public void tambahDokter(){
+    public void tambahDokter() {
         TambahDokterDialog tambahDokter = new TambahDokterDialog(this, rs);
         tambahDokter.setVisible(true);
     }
+
     /**
      * Fungsi untuk merefresh isi tabel dokter
      */
-    public void refreshTabelDokter(){
-        
+    public void refreshTabelDokter() {
+        table.setModel(new DokterTableModel(rs.getDaftarDokter()));
     }
 
 }

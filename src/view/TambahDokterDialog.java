@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import model_RS.Dokter;
 import model_RS.RumahSakit;
 
 /**
@@ -29,9 +30,10 @@ public class TambahDokterDialog extends JDialog {
     private JButton tambahButton;
     private MyDokterDialog owner;
 
-    public TambahDokterDialog(JDialog owner, RumahSakit rs) {
+    public TambahDokterDialog(MyDokterDialog owner, RumahSakit rs) {
         super(owner);
         rumahSakit = rs;
+        this.owner = owner;
         init();
     }
 
@@ -78,6 +80,8 @@ public class TambahDokterDialog extends JDialog {
     }
 
     public void tambahDokter() {
+        Dokter dr1 = new Dokter(idDokterText.getText(),namaDokterText.getText());
+        rumahSakit.tambahDokter(dr1);
         owner.refreshTabelDokter();
         dispose();
     }
