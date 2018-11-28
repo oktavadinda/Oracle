@@ -45,23 +45,23 @@ public class TambahDokterDialog extends JDialog {
         setLayout(null);
 
         tambahDokterLabel = new JLabel("Tambah Dokter");
-        tambahDokterLabel.setBounds(230, 15, 150, 10);
+        tambahDokterLabel.setBounds(180, 15, 150, 10);
         this.add(tambahDokterLabel);
 
         idDokterLabel = new JLabel("Id Dokter");
-        idDokterLabel.setBounds(20, 50, 50, 15);
+        idDokterLabel.setBounds(20, 50, 100, 15);
         this.add(idDokterLabel);
 
         idDokterText = new JTextField();
-        idDokterText.setBounds(150, 50, 100, 20);
+        idDokterText.setBounds(150, 50, 150, 20);
         this.add(idDokterText);
         
         namaDokterLabel = new JLabel("Nama Dokter");
-        namaDokterLabel.setBounds(20, 70, 50, 15);
+        namaDokterLabel.setBounds(20, 70, 100, 15);
         this.add(namaDokterLabel);
         
         namaDokterText = new JTextField();
-        namaDokterText.setBounds(150, 70, 100, 20);
+        namaDokterText.setBounds(150, 70, 150, 20);
         this.add(namaDokterText);
 
         // tambah Tombol Tambah
