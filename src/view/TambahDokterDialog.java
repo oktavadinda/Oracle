@@ -27,6 +27,7 @@ public class TambahDokterDialog extends JDialog {
     private JLabel namaDokterLabel;
     private JTextField namaDokterText;
     private JButton tambahButton;
+    private MyDokterDialog owner;
 
     public TambahDokterDialog(JDialog owner, RumahSakit rs) {
         super(owner);
@@ -48,13 +49,21 @@ public class TambahDokterDialog extends JDialog {
         this.add(tambahDokterLabel);
 
         idDokterLabel = new JLabel("Id Dokter");
-        idDokterLabel.setBounds(20, 50, 100, 15);
+        idDokterLabel.setBounds(20, 50, 50, 15);
         this.add(idDokterLabel);
-        
+
         idDokterText = new JTextField();
-        idDokterText.setBounds(150, 50, 350, 20);
+        idDokterText.setBounds(150, 50, 100, 20);
         this.add(idDokterText);
         
+        namaDokterLabel = new JLabel("Nama Dokter");
+        namaDokterLabel.setBounds(20, 70, 50, 15);
+        this.add(namaDokterLabel);
+        
+        namaDokterText = new JTextField();
+        namaDokterText.setBounds(150, 70, 100, 20);
+        this.add(namaDokterText);
+
         // tambah Tombol Tambah
         tambahButton = new JButton("Tambah");
         tambahButton.setBounds(50, 200, 100, 30);
@@ -69,6 +78,7 @@ public class TambahDokterDialog extends JDialog {
     }
 
     public void tambahDokter() {
+        owner.refreshTabelDokter();
         dispose();
     }
 
