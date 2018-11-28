@@ -24,6 +24,7 @@ public class Department {
     private String department_name;
 
     private ArrayList<Employee> listEmployees = new ArrayList<Employee>();
+    private ArrayList<Employee> managers = new ArrayList<Employee>() ;
 
     public Department() {
     }
@@ -105,4 +106,16 @@ public class Department {
         this.listEmployees = listEmployees;
     }
 
+    public void readManager() {
+
+    }
+
+    public ArrayList<Employee> getManagers() {
+        return managers;
+    }
+
+    public void setManagers(ArrayList<Employee> managers) {
+        this.managers = managers;
+    }
+    
 }

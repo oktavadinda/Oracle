@@ -21,7 +21,10 @@ public class MyOracle {
     private String sid;
     private String userName;
     private String password;
-
+    
+    public static String USER_NAME="MHS175314107";
+    public static String PASSWORD="MHS175314107";
+    
     public MyOracle() {
     }
 
